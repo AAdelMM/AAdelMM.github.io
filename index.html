@@ -233,7 +233,45 @@
         .project-body { padding: 25px; }
         .project-body h3 { color: var(--primary); margin: 0 0 10px 0; }
         .project-body p { color: var(--text-dim); font-size: 0.95rem; }
+/* اضافي للمشاريع  */
+/* تنسيقات إضافية للصور والتبويبات */
+    .project-tag {
+        font-size: 0.75rem;
+        padding: 4px 12px;
+        border-radius: 15px;
+        background: rgba(0, 210, 255, 0.1);
+        color: var(--primary);
+        border: 1px solid var(--primary);
+        display: inline-block;
+        margin-bottom: 10px;
+    }
 
+    .project-image-container {
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+        background: #1a202c;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .project-image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* هذا سيجعل صور اللوحات الإلكترونية تبدو رائعة */
+        transition: transform 0.5s;
+    }
+
+    .project-card:hover .project-image-container img {
+        transform: scale(1.1);
+    }
+
+    .hardware-tag { border-color: #ff9f43; color: #ff9f43; background: rgba(255, 159, 67, 0.1); }
+    .software-tag { border-color: #00d2ff; color: #00d2ff; background: rgba(0, 210, 255, 0.1); }
+    .embedded-tag { border-color: #ee5253; color: #ee5253; background: rgba(238, 82, 83, 0.1); }
+    
         /* التذييل */
         footer {
             background: #05080f;
@@ -357,34 +395,62 @@
 </div>
         </section>
 
-        <section id="projects" class="section-padding">
-            <h2 class="section-title">آخر ما قمت ببنائه</h2>
-           <div class="projects-grid">
-    <div class="project-card">
-        <div class="project-img-placeholder"><i class="fas fa-memory"></i></div>
-        <div class="project-body">
-            <h3>تصميم لوحات تحكم إلكترونية</h3>
-            <p>تنفيذ لوحات PCB مخصصة من الصفر، تشمل التصميم الهندسي والبرمجة الداخلية (Firmware) للتحكم في العمليات الميكانيكية.</p>
-        </div>
-    </div>
+      <section id="projects" class="section-padding">
+    <div class="container">
+        <h2 class="section-title">معرض الحلول المتكاملة</h2>
+        <p style="text-align: center; color: var(--text-dim); margin-top: -40px; margin-bottom: 50px;">
+            من بناء الدوائر المنطقية إلى واجهات المستخدم الذكية
+        </p>
 
-    <div class="project-card">
-        <div class="project-img-placeholder"><i class="fas fa-elevator"></i></div>
-        <div class="project-body">
-            <h3>تطوير أنظمة المصاعد الذكية</h3>
-            <p>دمج تقنيات البرمجة الحديثة مع لوحات تحكم المصاعد لتحسين الأداء وتوفير أنظمة مراقبة وأمان متطورة.</p>
-        </div>
-    </div>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="project-image-container">
+                    <img src="electronics_board.jpg" alt="تصميم لوحة إلكترونية" onerror="this.src='https://via.placeholder.com/400x250/1a202c/00d2ff?text=Electronic+Board+Design'">
+                </div>
+                <div class="project-body">
+                    <span class="project-tag hardware-tag">Hardware / PCB</span>
+                    <h3>تصميم وتصنيع لوحات التحكم</h3>
+                    <p>تصميم دوائر مطبوعة (PCB) مخصصة لأنظمة التحكم الآلي مع تنفيذ اللحام والاختبار العملي.</p>
+                </div>
+            </div>
 
-    <div class="project-card">
-        <div class="project-img-placeholder"><i class="fas fa-mobile-alt"></i></div>
-        <div class="project-body">
-            <h3>تطبيقات الربط والتحكم (IoT)</h3>
-            <p>تطوير تطبيقات موبايل تسمح للمستخدم بالتحكم في الأنظمة الإلكترونية والمعدات عن بُعد بكل سهولة وأمان.</p>
+            <div class="project-card">
+                <div class="project-image-container">
+                    <img src="elevator_system.jpg" alt="نظام تحكم مصاعد" onerror="this.src='https://via.placeholder.com/400x250/1a202c/ee5253?text=Elevator+Control+Logic'">
+                </div>
+                <div class="project-body">
+                    <span class="project-tag embedded-tag">Embedded Systems</span>
+                    <h3>برمجة وحدات التحكم (Firmware)</h3>
+                    <p>تطوير أكواد برمجية بلغة C للتعامل مع الحساسات والمحركات في أنظمة المصاعد والتحكم الصناعي.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image-container">
+                    <img src="flutter_app.jpg" alt="تطبيق Flutter" onerror="this.src='https://via.placeholder.com/400x250/1a202c/00d2ff?text=Flutter+App+UI'">
+                </div>
+                <div class="project-body">
+                    <span class="project-tag software-tag">Software / Mobile</span>
+                    <h3>تطبيقات الربط والمراقبة (IoT)</h3>
+                    <p>بناء تطبيقات Flutter متطورة تتيح للمستخدمين مراقبة الأنظمة الميكانيكية والتحكم بها عبر الإنترنت.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image-container">
+                    <img src="dashboard.jpg" alt="لوحة تحكم ويب" onerror="this.src='https://via.placeholder.com/400x250/1a202c/00d2ff?text=Admin+Dashboard'">
+                </div>
+                <div class="project-body">
+                    <span class="project-tag software-tag">Web Development</span>
+                    <h3>أنظمة إدارة العقود والمطالبات</h3>
+                    <p>منصات ويب لإدارة البيانات الضخمة، العقود التجارية، وأتمتة التقارير المالية للشركات.</p>
+                </div>
+            </div>
+
         </div>
     </div>
-</div>
-        </section>
+</section>
 
     </div>
 
